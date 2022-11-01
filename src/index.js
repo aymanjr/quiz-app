@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ContextProvider } from "./hooks/useStateContext";
 
 const darkTheme = createTheme({
   palette: {
@@ -15,10 +16,12 @@ const darkTheme = createTheme({
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <ContextProvider>
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <App />
     </ThemeProvider>
+    </ContextProvider>
   </React.StrictMode>
 );
 
